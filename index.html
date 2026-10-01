@@ -16,50 +16,43 @@ body{position:relative}
 }
 .scene:after{
  content:"";position:absolute;inset:0;
- background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(10,48,82,.10));
+ background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(10,48,82,.07));
  pointer-events:none;
 }
 .glow{
- position:absolute;width:180px;height:180px;border-radius:50%;
- background:radial-gradient(circle,rgba(255,255,255,.35),rgba(65,180,255,.12) 28%,transparent 70%);
- filter:blur(4px);pointer-events:none;mix-blend-mode:screen;
- animation:floatGlow 8s ease-in-out infinite;
+ position:absolute;width:220px;height:220px;border-radius:50%;
+ background:radial-gradient(circle,rgba(255,255,255,.16),rgba(90,180,255,.06) 32%,transparent 70%);
+ filter:blur(18px);pointer-events:none;opacity:.55;
 }
-.g1{left:8%;top:18%}.g2{right:10%;top:25%;width:150px;height:150px;animation-delay:2s}
-.g3{left:45%;bottom:4%;width:220px;height:220px;animation-delay:4s}
+.g1{left:8%;top:18%}.g2{right:10%;top:25%;width:180px;height:180px}.g3{left:45%;bottom:4%;width:220px;height:220px}
 .sweep{
- position:absolute;top:-20%;left:-25%;width:22%;height:150%;
- background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
- transform:rotate(18deg);filter:blur(10px);pointer-events:none;
- animation:sweep 8s linear infinite;
+ position:absolute;top:-25%;left:-30%;width:14%;height:150%;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.11),transparent);
+ transform:rotate(18deg);filter:blur(14px);pointer-events:none;
+ animation:sweep 14s linear infinite;
 }
 .hotspot{
  position:absolute;z-index:5;display:block;border-radius:24px;
  text-decoration:none;cursor:pointer;outline:none;
+ transition:transform .25s ease,filter .25s ease;
 }
 .hotspot:after{
  content:"";position:absolute;inset:0;border-radius:inherit;
- background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.28) 48%,transparent 70%);
- transform:translateX(-130%);
- animation:buttonShine 4.5s ease-in-out infinite;
+ background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.20) 50%,transparent 65%);
+ transform:translateX(-150%);
+ animation:buttonShine 8s ease-in-out infinite;
  pointer-events:none;
 }
-.hotspot:hover{filter:brightness(1.07);transform:translateY(-2px)}
-.hotspot:active{transform:scale(.985)}
-.pia{left:20.7%;top:46%;width:12.8%;height:27.5%}
-.binbee{left:33.4%;top:46%;width:12.8%;height:27.5%}
-.kapuk{left:46.4%;top:46%;width:12.8%;height:27.5%}
-.cross{left:59.5%;top:46%;width:12.8%;height:27.5%}
-.sodo{left:72.6%;top:46%;width:12.8%;height:27.5%}
-.maintenance{cursor:not-allowed}
+.hotspot:hover{filter:brightness(1.04);transform:translateY(-2px)}
+.hotspot:active{transform:scale(.99)}
 @keyframes sweep{0%{transform:translateX(-20%) rotate(18deg)}100%{transform:translateX(650%) rotate(18deg)}}
-@keyframes buttonShine{0%,45%{transform:translateX(-130%)}70%,100%{transform:translateX(130%)}}
-@keyframes floatGlow{0%,100%{transform:translate(0,0) scale(1);opacity:.45}50%{transform:translate(20px,-14px) scale(1.12);opacity:.75}}
+@keyframes buttonShine{0%,55%{transform:translateX(-150%)}78%,100%{transform:translateX(150%)}}
+50%{transform:translate(20px,-14px) scale(1.12);opacity:.75}}
 @media (max-width:600px){
  body{overflow:auto}
  .scene{position:absolute;min-height:100svh;height:100svh;background-position:center center;background-size:cover}
  .glow{display:none}
- .sweep{width:35%;animation-duration:6s}
+ .sweep{width:22%;animation-duration:16s;opacity:.65}
  .hotspot{border-radius:14px}
  .pia{left:18%;top:42.5%;width:17%;height:22%}
  .binbee{left:34.5%;top:42.5%;width:17%;height:22%}
@@ -67,7 +60,7 @@ body{position:relative}
  .cross{left:67.5%;top:42.5%;width:17%;height:22%}
  .sodo{left:84%;top:42.5%;width:15%;height:22%}
 }
-@media (prefers-reduced-motion:reduce){.sweep,.glow,.hotspot:after{animation:none}}
+@media (prefers-reduced-motion:reduce){.sweep,.hotspot:after{animation:none}}
 </style>
 </head>
 <body>
